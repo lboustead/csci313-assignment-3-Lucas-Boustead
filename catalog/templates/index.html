@@ -1,8 +1,6 @@
 {% extends "base_generic.html" %}
 <!--Changed page title to Home Page-->
-{% block title %}
-<title>Home Page</title>
-{%endblock title%} 
+{% block title %}Home Page{%endblock title%} 
 
 {%block content%}
 <h1>Local Library Home</h1>
@@ -21,7 +19,7 @@
   <li><strong>Books with the word Dune:</strong> {{ num_books_keyword_Dune }}</li>
 </ul>
 
-<p>
-  You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.
-</p>
+{%block footer%}  You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.
+{% endblock footer%}
+
 {% endblock %}
