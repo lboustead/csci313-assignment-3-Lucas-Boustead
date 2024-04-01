@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-      {% block title %}test{% endblock title %}
+      {% block title %}{% endblock title %}
     </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -60,6 +60,12 @@
             </ul>
             {% endif %}
 
+            {% if user.is_superuser %}
+            <ul class="sidebar-nav">
+              <li><a class="link-opacity-50-hover" href="{% url 'admin:index' %}">Admin Page</a></li>
+            </ul>
+            {% endif %}
+
           {% endblock %}
         </div>
           
@@ -90,7 +96,7 @@
   </body>
   <footer class="footer fixed-bottom p-3">
     <div class="container">
-      <span class="text-muted">{% block footer %}Text here{% endblock footer %}</span>
+      <span class="text-muted">{% block footer %}{% endblock footer %}</span>
     </div>
   </footer>
 </html>
